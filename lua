@@ -15,7 +15,7 @@ local LocalPlayer = game.Players.LocalPlayer
 if LocalPlayer then
     LocalPlayer.Chatted:Connect(function(message)
         local command = string.lower(message)
-        if command == ".rspy" then
+        if command == ".hydro" then
             local owner = "Upbolt"
             local branch = "revision"
 
@@ -25,6 +25,18 @@ if LocalPlayer then
 
             webImport("init")
             webImport("ui/main")
+        end
+    end)
+end
+
+local Players = game:GetService("Players")
+local LocalPlayer = Players.LocalPlayer
+
+if LocalPlayer then
+    LocalPlayer.Chatted:Connect(function(message)
+        local command = string.lower(message)
+        if command == ".rspy" then
+            loadstring(game:HttpGet("https://raw.githubusercontent.com/78n/SimpleSpy/main/SimpleSpySource.lua"))()
         end
     end)
 end
